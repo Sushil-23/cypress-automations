@@ -14,8 +14,6 @@ describe("Test contact us form via automation test store", () => {
         {
             const successMessage=$successMessage.text();
             expect(successMessage).to.eq("Your enquiry has been successfully sent to the store owner!")
-        })
-
-        
+        })       
     })
 })
