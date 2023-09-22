@@ -8,7 +8,7 @@ describe("Test contact us form via automation test store", () => {
         cy.get('#ContactUsFrm_email').type("joe_blogs555@gmail.com");
         cy.get('#ContactUsFrm_enquiry').type("Do you  provide additional discount on bulk orders?");
         cy.get('button[title="Submit"]').click();
-
+        cy.get('.mb40 > :nth-child(3)').should('have.text','Your enquiry has been successfully sent to the store owner!')
         cy.get('.mb40 > :nth-child(3)').then(function($successMessage)
         {
             const successMessage=$successMessage.text();
