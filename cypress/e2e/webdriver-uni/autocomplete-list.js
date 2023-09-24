@@ -14,6 +14,20 @@ describe("Verify autocomplete dropdown list via webdriveruni", () => {
                 cy.get('#submit-button').click()
                 cy.url().should('include', 'food-item=Avacado')
             }
+        }).then(() => {
+
+            cy.get("#myInput").type('G');
+            cy.get('.autocomplete-items > *').each(($el, index, $list) => {
+                const prod = $el.text();
+                const productToSelect = "Grapes";
+                if (prod === productToSelect) {
+                    cy.wrap($el).click();
+                    cy.get('#myInput').should('have.value', 'Grapes');
+                    cy.get('#submit-button').click()
+                    cy.url().should('include', 'food-item=Grapes')
+                }
+            })
+
         })
 
     })
