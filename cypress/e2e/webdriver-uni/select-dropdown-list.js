@@ -14,7 +14,5 @@ describe("Interate with drop down list via webdriveruni", () => {
         cy.get('#dropdowm-menu-2').select('maven').contains('Maven');
         cy.get('#dropdowm-menu-2').select('TestNG').should('have.value','testng');
 
-
-
     })
 })
