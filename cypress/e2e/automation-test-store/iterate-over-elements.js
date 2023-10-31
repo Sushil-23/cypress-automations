@@ -28,4 +28,11 @@ describe("Iterate over elements", () => {
         cy.selectProduct('Seaweed Conditioner');
 
     })
+
+    it("Add one more specific product to basket", () => {
+        cy.visit("https://automationteststore.com/");
+        cy.get("a[href*='product/category&path=']").contains('Hair Care').click();
+        cy.selectProduct('Pantene Pro-V Conditioner, Classic Care');
+
+    })
 })
